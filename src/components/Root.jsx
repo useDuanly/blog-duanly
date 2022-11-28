@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 
 import HomePage from "../page/HomePage";
 import BlogPage from "../page/BlogPage";
@@ -8,7 +8,7 @@ import { Header } from "./Header";
 import SinglePost from "./SinglePost";
 function Root() {
   return (
-    <Router>
+    <HashRouter>
       <Header />
       <Routes>
         <Route path="/" element={<HomePage />} />
@@ -16,7 +16,7 @@ function Root() {
         <Route path="/blog/:slug" element={<SinglePost />} />
         <Route path="/*" element={<Error />} />
       </Routes>
-    </Router>
+    </HashRouter>
   );
 }
 
