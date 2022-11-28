@@ -8,6 +8,10 @@ export default function SinglePost() {
   const [isLoading, setIsLoading] = useState(true);
   const { slug } = useParams();
 
+  if (!singlePost) {
+    console.log("fallo");
+  }
+
   useEffect(() => {
     client
       .fetch(

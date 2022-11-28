@@ -1,29 +1,8 @@
-import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import client from "../client";
+import useBlogPosts from "../hooks/useBlogPosts";
 
 export default function BlogPage() {
-  const [posts, setPosts] = useState([]);
-
-  useEffect(() => {
-    client
-      .fetch(
-        `*[_type == "post"] {
-        title,
-        slug,
-        body,
-        mainImage {
-          asset -> {
-            _id,
-            url
-          },
-          alt
-        }
-      }`
-      )
-      .then((data) => setPosts(data))
-      .catch(console.error);
-  }, []);
+  const [posts] = useBlogPosts();
 
   return (
     <>
