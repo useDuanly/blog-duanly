@@ -46,12 +46,12 @@ export default function SinglePost() {
               className="blog__image rounded-t"
             />
           )}
-          <p>By Thomas Sankara</p>
+          <p className="py-2 text-center">By Thomas Sankara</p>
 
           <div className="block__content">
             <BlockContent
               blocks={singlePost.body}
-              projectId="2hp9gld0"
+              projectId="7ghwu0av"
               dataset="production"
             />
           </div>
